@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAPORAN TEORI</title>
+    <style>
+        /* Gaya untuk Mode Tampilan Rapi */
+        body.tampilan-rapi {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fce4ec; /* Pink muda */
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f8bbd0;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #880e4f;
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+            color: #6a1b9a;
+        }
+        .question-container {
+            margin-bottom: 20px;
+        }
+        .question-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ec407a; /* Pink lebih gelap */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .question-content {
+            display: none;
+            padding: 15px;
+            background-color: #fce4ec;
+            border-radius: 8px;
+            margin-top: 10px;
+            color: #333;
+        }
+        p {
+            text-align: justify;
+            font-size: 1em;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .button-mode {
+            margin: 20px 0;
+            padding: 12px 24px;
+            background-color: #d81b60;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            display: block;
+            width: 100%;
+            font-size: 1.1em;
+        }
+
+        /* Gaya untuk Mode Tampilan Berantakan */
+        body.tampilan-berantakan {
+            font-family: Comic Sans MS, cursive;
+            background-color: #ff00ff;
+            color: #ff0000;
+        }
+        .container-berantakan {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: rgb(229, 255, 80);
+            border-radius: 20px;
+            border: 5px dashed rgb(255, 115, 0);
+        }
+    </style>
+</head>
+<body class="tampilan-rapi">
+    <div id="content" class="container">
+        <h1>LAPORAN TEORI</h1>
+        <h2>ZAHWA | 202331237</h2>
+
+        <!-- Section 1 -->
+        <div class="question-container">
+            <button class="question-button" onclick="toggleContent('content1')">Mengapa menggunakan CSS dan JavaScript dalam pemrograman web?</button>
+            <div id="content1" class="question-content">
+                <p>CSS dan JavaScript adalah dua teknologi dalam pengembangan web modern. CSS membantu dalam membuat desain yang konsisten dan fleksibel, memudahkan pemeliharaan, dan meningkatkan estetika. JavaScript menambahkan interaktivitas, seperti validasi form, animasi, dan manipulasi data dinamis. Selain itu, JavaScript dengan framework seperti React Native, dapat digunakan untuk pengembangan aplikasi mobile di Android dan iOS secara bersamaan.</p>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="question-container">
+            <button class="question-button" onclick="toggleContent('content2')">Bagaimana CSS dan JavaScript dapat diintegrasikan dalam pemrograman?</button>
+            <div id="content2" class="question-content">
+                <p>CSS dapat diimplementasikan melalui inline style, internal style, atau eksternal file. Eksternal CSS meningkatkan konsistensi dan internal CSS membantu pada halaman tunggal. JavaScript juga bisa diimplementasikan secara inline, internal, atau eksternal, memudahkan pembuatan interaksi dan logika. Dengan kombinasi link untuk CSS dan script untuk JavaScript, halaman web menjadi lebih dinamis dan menarik. JavaScript juga bisa digunakan di server-side dengan Node.js untuk aplikasi dekstop dan mobile.</p>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="question-container">
+            <button class="question-button" onclick="toggleContent('content3')">Jelaskan apa saja keuntungan menggunakan JavaScript dan CSS?</button>
+            <div id="content3" class="question-content">
+                <p>Keuntungan CSS dan JavaScript termasuk kemudahan mengatur tampilan dan membuat konten interaktif. CSS menjaga tampilan konsisten dan mudah disesuaikan. JavaScript memungkinkan pengolahan data secara dinamis dan pengalaman pengguna lebih interaktif. Kedua bahasa ini mempermudah pengembangan web, mengurangi repetisi, dan menghasilkan halaman web yang responsif dan user-friendly.</p>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="question-container">
+            <button class="question-button" onclick="toggleContent('content4')">Jelaskan apa saja keuntungan menggunakan Bootstrap?</button>
+            <div id="content4" class="question-content">
+                <ul>
+                    <li>Kemudahan penggunaan - Bootstrap menyediakan komponen siap pakai yang mudah diintegrasikan.</li>
+                    <li>Desain responsif - Berfungsi mulus di berbagai ukuran layar.</li>
+                    <li>Konsistensi - Telah diuji pada berbagai browser utama.</li>
+                    <li>Komunitas besar - Banyak sumber daya dari komunitas pengembang Bootstrap.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <button class="button-mode" onclick="toggleMode()">Ganti Mode Tampilan</button>
+
+    <script>
+        // Fungsi untuk menampilkan atau menyembunyikan konten
+        function toggleContent(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.style.display = section.style.display === "none" ? "block" : "none";
+        }
+
+        // Fungsi untuk mengganti antara mode tampilan rapi dan berantakan
+        function toggleMode() {
+            if (document.body.classList.contains("tampilan-rapi")) {
+                document.body.classList.remove("tampilan-rapi");
+                document.body.classList.add("tampilan-berantakan");
+                document.getElementById("content").classList.remove("container");
+                document.getElementById("content").classList.add("container-berantakan");
+            } else {
+                document.body.classList.remove("tampilan-berantakan");
+                document.body.classList.add("tampilan-rapi");
+                document.getElementById("content").classList.remove("container-berantakan");
+                document.getElementById("content").classList.add("container");
+            }
+        }
+    </script>
+</body>
+</html>
